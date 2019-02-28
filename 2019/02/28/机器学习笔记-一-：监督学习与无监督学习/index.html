@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="杂谈," />
+  <meta name="keywords" content="机器学习," />
 
 
 
@@ -94,18 +94,23 @@
 
 
 
-<meta name="description" content="拖延症晚期，从大一拖到大四，博客终于搭起来了，也算是了结了一个心愿。 接下来的一段日子里，就像分类写的那样：心灵港，技术站。 这个博客将成为我心灵的港湾，记录日常的喜怒哀乐，也分享自己的一些人生感悟，希望十几年后回看这些文章，还能体会到此时的心情，激励自己继续向前。对于技术站，我希望每一篇文章都像一个站台，记录我学习的每一个阶段，学习这趟列车没有终点，我希望将每一个站台都搭建牢固，也希望看到我博客">
-<meta name="keywords" content="杂谈">
+<meta name="description" content="最近在学习吴恩达的机器学习课程，就在博客上记录一下自己的学习笔记，也尽可能加一些自己接触过的扩展知识和应用。 监督学习(Supervised Learning)定义给定一个已知输入与正确输出的数据集，且知道输入和输出之间有一定的关系，用该数据集求得一个映射关系，使其可以将输入映射到正确的输出。 分类 回归(Regression)   定义：数据集的输出为连续型变量，如1.1、2.1，是一种定量输出">
+<meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【杂谈】第一篇博客及未来规划">
-<meta property="og:url" content="http://yoursite.com/2019/02/24/【杂谈】第一篇博客及未来规划/index.html">
+<meta property="og:title" content="机器学习笔记(一)：监督学习与无监督学习">
+<meta property="og:url" content="http://yoursite.com/2019/02/28/机器学习笔记-一-：监督学习与无监督学习/index.html">
 <meta property="og:site_name" content="Qingduo&#39;s Blog">
-<meta property="og:description" content="拖延症晚期，从大一拖到大四，博客终于搭起来了，也算是了结了一个心愿。 接下来的一段日子里，就像分类写的那样：心灵港，技术站。 这个博客将成为我心灵的港湾，记录日常的喜怒哀乐，也分享自己的一些人生感悟，希望十几年后回看这些文章，还能体会到此时的心情，激励自己继续向前。对于技术站，我希望每一篇文章都像一个站台，记录我学习的每一个阶段，学习这趟列车没有终点，我希望将每一个站台都搭建牢固，也希望看到我博客">
+<meta property="og:description" content="最近在学习吴恩达的机器学习课程，就在博客上记录一下自己的学习笔记，也尽可能加一些自己接触过的扩展知识和应用。 监督学习(Supervised Learning)定义给定一个已知输入与正确输出的数据集，且知道输入和输出之间有一定的关系，用该数据集求得一个映射关系，使其可以将输入映射到正确的输出。 分类 回归(Regression)   定义：数据集的输出为连续型变量，如1.1、2.1，是一种定量输出">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-25T06:28:05.954Z">
+<meta property="og:image" content="http://pngorxqb3.bkt.clouddn.com/blog/ML1/HousingPrice2.jpg">
+<meta property="og:image" content="http://pngorxqb3.bkt.clouddn.com/blog/ML1/ClassificationEg.jpg">
+<meta property="og:image" content="http://pngorxqb3.bkt.clouddn.com/blog/ML1/cluster.jpg">
+<meta property="og:image" content="http://pngorxqb3.bkt.clouddn.com/blog/ML1/semisupervised.png">
+<meta property="og:updated_time" content="2019-02-28T08:05:54.172Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【杂谈】第一篇博客及未来规划">
-<meta name="twitter:description" content="拖延症晚期，从大一拖到大四，博客终于搭起来了，也算是了结了一个心愿。 接下来的一段日子里，就像分类写的那样：心灵港，技术站。 这个博客将成为我心灵的港湾，记录日常的喜怒哀乐，也分享自己的一些人生感悟，希望十几年后回看这些文章，还能体会到此时的心情，激励自己继续向前。对于技术站，我希望每一篇文章都像一个站台，记录我学习的每一个阶段，学习这趟列车没有终点，我希望将每一个站台都搭建牢固，也希望看到我博客">
+<meta name="twitter:title" content="机器学习笔记(一)：监督学习与无监督学习">
+<meta name="twitter:description" content="最近在学习吴恩达的机器学习课程，就在博客上记录一下自己的学习笔记，也尽可能加一些自己接触过的扩展知识和应用。 监督学习(Supervised Learning)定义给定一个已知输入与正确输出的数据集，且知道输入和输出之间有一定的关系，用该数据集求得一个映射关系，使其可以将输入映射到正确的输出。 分类 回归(Regression)   定义：数据集的输出为连续型变量，如1.1、2.1，是一种定量输出">
+<meta name="twitter:image" content="http://pngorxqb3.bkt.clouddn.com/blog/ML1/HousingPrice2.jpg">
 
 
 
@@ -134,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/24/【杂谈】第一篇博客及未来规划/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/02/28/机器学习笔记-一-：监督学习与无监督学习/"/>
 
 
 
 
 
-  <title>【杂谈】第一篇博客及未来规划 | Qingduo's Blog</title>
+  <title>机器学习笔记(一)：监督学习与无监督学习 | Qingduo's Blog</title>
   
 
 
@@ -309,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/24/【杂谈】第一篇博客及未来规划/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/28/机器学习笔记-一-：监督学习与无监督学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="冯清铎">
@@ -326,7 +331,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【杂谈】第一篇博客及未来规划</h1>
+          <h1 class="post-title" itemprop="name headline">机器学习笔记(一)：监督学习与无监督学习</h1>
         
 
         <div class="post-meta">
@@ -338,8 +343,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-24T15:50:27+08:00">
-                2019-02-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-28T09:24:50+08:00">
+                2019-02-28
               </time>
             
 
@@ -361,8 +366,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mental/" itemprop="url" rel="index">
-                    <span itemprop="name">心灵港</span>
+                  <a href="/categories/tech/" itemprop="url" rel="index">
+                    <span itemprop="name">技术站</span>
                   </a>
                 </span>
 
@@ -398,11 +403,57 @@
       
 
       
-        <p>拖延症晚期，从大一拖到大四，博客终于搭起来了，也算是了结了一个心愿。</p>
-<p>接下来的一段日子里，就像分类写的那样：心灵港，技术站。 这个博客将成为我心灵的港湾，记录日常的喜怒哀乐，也分享自己的一些人生感悟，希望十几年后回看这些文章，还能体会到此时的心情，激励自己继续向前。对于技术站，我希望每一篇文章都像一个站台，记录我学习的每一个阶段，学习这趟列车没有终点，我希望将每一个站台都搭建牢固，也希望看到我博客的人能在这站台休整片刻，继续前行。</p>
-<p>最近时常有些焦虑，作为留学大军的一员，因为种种因素，我至今还是一个失学儿童，心中虽有不甘，但这件事情也让我认识到了自己的不足。大学三年来，从自己内心来说，相比之前，在自己擅长的方向上已经有着很大的进步，但身边优秀的朋友，残酷的竞争环境，对未来的担忧等等都不断警醒着我，不能再放松了，要让自己优秀起来。</p>
-<p>开学一周，对自己的表现还算满意。每天按时作息，白天泡在图书馆，晚上运动、玩游戏，每天的生活让我觉得充实、快乐，也没有想象中的疲惫，反倒乐在其中。在图书馆学习自己感兴趣的知识，查找书籍，第一次觉得图书馆竟然有这么多宝藏，惊叹之余感到惋惜，为何之前没有图书馆学习的习惯呢，错过了这么多知识。人啊，总是在快要失去的时候才懂得珍惜，希望自己抓紧最后的半年，做一些有意义的事，做一个积极生活的人吧~</p>
-<p>没什么图可以放，下次运动的时候要拍些照片，记录生活的同时也提高一下自己的渣渣拍照技术😆</p>
+        <p>最近在学习吴恩达的机器学习课程，就在博客上记录一下自己的学习笔记，也尽可能加一些自己接触过的扩展知识和应用。</p>
+<h1 id="监督学习-Supervised-Learning"><a href="#监督学习-Supervised-Learning" class="headerlink" title="监督学习(Supervised Learning)"></a>监督学习(Supervised Learning)</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>给定一个已知输入与正确输出的数据集，且知道输入和输出之间有一定的关系，用该数据集求得一个映射关系，使其可以将输入映射到正确的输出。</p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ul>
+<li><p><strong>回归(Regression)</strong></p>
+<p>  <strong>定义</strong>：数据集的输出为连续型变量，如1.1、2.1，是一种定量输出。我们希望通过数据集得到一段连续的函数来预测输入对应的输出结果。</p>
+<p>  如机器学习中我们常听到的线性回归(Linear Regression)和岭回归(Ridge Regression)都属于回归模型。</p>
+<p>  <strong>回归模型举例：吴恩达机器学习课程中的房屋价格预测</strong></p>
+<p>  数据集为一些不同面积的房屋的出售价格，要通过该数据集预测给定面积的房屋的出售价格。</p>
+<p>  <img src="http://pngorxqb3.bkt.clouddn.com/blog/ML1/HousingPrice2.jpg" alt="课程中的截图"></p>
+<p>  如上图，我们可以根据数据集拟合线性函数，也可以拟合二次函数甚至更复杂的函数形式，不同的函数对应不同的结果，我们要尽可能得到精确的结果但也要谨记一个原则：物极则反，不能过度的拟合函数。这涉及到过拟合的问题，我们将在接下里的篇章中提到。</p>
+</li>
+<li><p><strong>分类(Classification)</strong></p>
+<p>  <strong>定义</strong>：数据集的输出为离散型变量，是一种定性输出，可以是二分类，如输出1和0，代表是与否；也可以是多分类，如0、1、2代表高级、中级、初级。我们希望通过数据集找到一个函数判断数据所属的类别。</p>
+<p>  <strong>分类模型举例：吴恩达机器学习课程中的肿瘤分类问题</strong></p>
+<p>  数据集的输入为一些患者的肿瘤大小与年龄，输出为是否为恶性肿瘤。我们要通过数据集得到一个函数，将新患者的数据代入时可以判别其对应的输出是良性或者恶性。</p>
+<p>  <img src="http://pngorxqb3.bkt.clouddn.com/blog/ML1/ClassificationEg.jpg" alt="课程中肿瘤问题截图"></p>
+<p>  当然，如视频所说，我们可以有无穷多个特征如肿块厚度，肿瘤细胞分布均匀性等来作为判断依据，这也更符合实际情况。对此，我们可以建立三维、四维乃至N维的坐标系，在这样一个空间中拟合一个函数，试着在脑海中构建这么一个坐标系，可能更加有助于理解。</p>
+<p>  相比回归算法，我们可能知晓更多的经典分类算法，如KNN、朴素贝叶斯、SVM、逻辑回归(Logistic Regression)、决策树等，这些分类算法甚至占据了机器学习的半壁江山。</p>
+</li>
+</ul>
+<h1 id="无监督学习-Unsupervised-Learning"><a href="#无监督学习-Unsupervised-Learning" class="headerlink" title="无监督学习(Unsupervised Learning)"></a>无监督学习(Unsupervised Learning)</h1><h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><p>给定的数据集没有标签或者只有一种标签，我们基本不知道输出的结果会是如何。计算机从数据中获得一个结构辅助我们进行下一步工作。</p>
+<h2 id="分类-1"><a href="#分类-1" class="headerlink" title="分类"></a>分类</h2><ul>
+<li><p><strong>聚类(clustering)</strong></p>
+<p>  <strong>定义</strong>：对大量未知标注的数据集，按数据的内在相似性将数据集划分为多个类别，使类别内的数据相似度较大而类别间的数据相似度较小。划分得到的类别成为簇(cluster)，</p>
+<p>  <strong>聚类模型举例</strong>：</p>
+<p>  <img src="http://pngorxqb3.bkt.clouddn.com/blog/ML1/cluster.jpg" alt="聚类图示"></p>
+<p>  聚类按照聚类准则可以大致分为：划分聚类(k-means等)、层次聚类、密度聚类(DBSCAN等)、网格聚类等。</p>
+<p>  聚类的作用在课程中已经有很多的展示：新闻分类、基因人群分类、社交网络分析，市场划分，天文数据分析等。</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>*降维</strong></p>
+<p>  <strong>定义</strong>：采用某种映射方法，将原高维空间中的数据点映射到低维度的空间中，常在机器学习中用作数据压缩、提升学习效率等。</p>
+<p>  * 吴恩达课程中没有提到降维，很多博客中也指出无监督学习主要是聚类，但并未谈及其他模型。我在这里将降维列上来是因为降维的大部分算法都是无监督算法，如PCA是典型的无监督算法，作为本节知识的补充，帮助大家理解无监督学习、聚类、降维的关系。</p>
+<p>  常用的降维方法有：主成分分析法(PCA)，等距映射方法(Isomap)，局部线性嵌入(LLE)。</p>
+</li>
+</ul>
+<h1 id="半监督学习-Semi-Supervised-Learning"><a href="#半监督学习-Semi-Supervised-Learning" class="headerlink" title="半监督学习(Semi-Supervised Learning)"></a>半监督学习(Semi-Supervised Learning)</h1><h2 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h2><p>监督学习和非监督学习的结合。综合利用有标识的数据和没有标识的数据(一般来说无标识的数据比有标识的数据多)，来生成合适的分类函数。基本思想是利用数据分布上的模型假设建立学习器对未标记数据进行标记。</p>
+<p>* 在这里解释一下为什么要使用半监督学习：<br>现在主流的学习算法仍是监督学习，但是数据集中存在大量的无标记数据，人工标注是一件非常费时费力的事情，所以我们要开发半监督学习，同时利用有标记和无标记的数据，训练更合理的分类器。举个简单的例子：</p>
+<p>图中蓝色和黄色为有标记的数据集，训练结果如左图；绿色为无标记的训练集，训练结果为右图。可以看到半监督学习训练出的模型更为合理。</p>
+<p><img src="http://pngorxqb3.bkt.clouddn.com/blog/ML1/semisupervised.png" alt="半监督学习"></p>
+<p>但上述示例只是一种理想情况，现实情况下，对于无标记数据有着严格的要求，繁杂的处理，所以半监督学习大部分仍在学术研究中，应用较少。</p>
+<h2 id="分类-2"><a href="#分类-2" class="headerlink" title="分类"></a>分类</h2><ul>
+<li><p><strong>直推学习(Transductive Learning)</strong></p>
+<p>  只处理样本空间内给定的训练数据，利用训练数据中有类标签的样本和无类标签的样例进行训练，预测训练数据中无类标签的样例的类标签</p>
+</li>
+<li><p><strong>归纳学习(Inductive Learning)</strong></p>
+<p>  处理整个样本空间中所有给定和未知的样例，同时利用训练数据中有类标签的样本和无类标签的样例，以及未知的测试样例一起进行训练，不仅预测训练数据中无类标签的样例的类标签，更主要的是预测未知的测试样例的类标签</p>
+</li>
+</ul>
+<p>本篇到此结束了，课程中第一课只是简单地介绍机器学习，让大家对一些重要的概念有直观的了解，在学习完之后我稍微做了一下总结，也阅读了一些相关的文章进行了扩展，发现要拓展并深入研究的方向有很多，我也会一一展开进行学习总结~</p>
 
       
     </div>
@@ -449,7 +500,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/杂谈/" rel="tag"># 杂谈</a>
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
           
         </div>
       
@@ -462,15 +513,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/02/24/【杂谈】第一篇博客及未来规划/" rel="next" title="【杂谈】第一篇博客及未来规划">
+                <i class="fa fa-chevron-left"></i> 【杂谈】第一篇博客及未来规划
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/28/机器学习笔记-一-：监督学习与无监督学习/" rel="prev" title="机器学习笔记(一)：监督学习与无监督学习">
-                机器学习笔记(一)：监督学习与无监督学习 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -522,8 +573,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://pngorxqb3.bkt.clouddn.com/tianxian2.jpeg"
@@ -598,6 +658,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#监督学习-Supervised-Learning"><span class="nav-number">1.</span> <span class="nav-text">监督学习(Supervised Learning)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类"><span class="nav-number">1.2.</span> <span class="nav-text">分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无监督学习-Unsupervised-Learning"><span class="nav-number">2.</span> <span class="nav-text">无监督学习(Unsupervised Learning)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类-1"><span class="nav-number">2.2.</span> <span class="nav-text">分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#半监督学习-Semi-Supervised-Learning"><span class="nav-number">3.</span> <span class="nav-text">半监督学习(Semi-Supervised Learning)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-2"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类-2"><span class="nav-number">3.2.</span> <span class="nav-text">分类</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
